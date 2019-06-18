@@ -5,10 +5,10 @@ class IncomeExpense extends Component {
     render() {
         return (
             <React.Fragment>
+                <Navigation />
                 <div className="subheader">
                     <div className="transparent-bg"></div>
                     <div className="container">
-                        <Navigation />
                         <div className="header-top">
                             <div className="banner">
                                 <h1>Income And Expense Form</h1>

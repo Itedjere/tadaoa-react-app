@@ -61,10 +61,13 @@ a:hover {
   left: 0;
   background-color: #fff;
   width: 100%;
-  padding: 10px 95px 20px;
+  padding: 0px 95px;
   height: auto;
   overflow: hidden;
   z-index: 30;
+}
+.logo nav.bg-light {
+  background-color: #fff !important;
 }
 .logo img {
   max-width: 100%;
