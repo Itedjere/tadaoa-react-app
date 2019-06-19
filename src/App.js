@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/income-expense-form/" component={IncomeExpense} />
+        <Route path="/income-expense-form" component={IncomeExpense} />
       </Switch>
       <Footer />
     </React.Fragment>

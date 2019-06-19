@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Navigation from './Navigation';
 import PersonalDetails from './IncomeExpense/PersonalDetails';
 import IncomeInformation from './IncomeExpense/IncomeInformation';
@@ -221,7 +222,14 @@ class IncomeExpense extends Component {
                                     values={this.state}
                                 />;
                 break;
+            default:
+                    displayedForm = <PersonalDetails 
+                                        increment={this.increment}
+                                        values={this.state}
+                                    />;
+                break;
         }
+
         return (
             <React.Fragment>
                 <Navigation />
@@ -238,7 +246,7 @@ class IncomeExpense extends Component {
 
                 <div className="formcontainer">
                     <div className="container" id="mycontainer">
-                        <form role="form" onSubmit={this.handleSubmit} onChange={this.handleChange}>
+                        <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                             { displayedForm }
                         </form>
                     </div>

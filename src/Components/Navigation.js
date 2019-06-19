@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Collapse,
@@ -10,8 +11,7 @@ import {
   NavLink,
   Container,
   Row,
-  Col,
-  Media } from 'reactstrap';
+  Col } from 'reactstrap';
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -34,17 +34,17 @@ export default class Navigation extends React.Component {
           <Row>
             <Col>
               <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">
+                <NavbarBrand tag={Link} to="/">
                   <img src="images/OHG-Logo.svg" alt="ohgtax Logo" width="293" />
                 </NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                   <Nav className="ml-auto" navbar>
                     <NavItem>
-                      <NavLink href="/">Home</NavLink>
+                      <NavLink tag={Link} to="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href="/income-expense-form/">Income Expense Form</NavLink>
+                      <NavLink tag={Link} to="/income-expense-form">Income Expense Form</NavLink>
                     </NavItem>
                   </Nav>
                 </Collapse>
