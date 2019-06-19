@@ -8,9 +8,8 @@ define('PTL_DBPASS', '');
 define('PTL_DBTABLE', 'taxes');
 
 header("Access-Control-Allow-Origin: *");
-// $rest_json = file_get_contents("php://input");
-// $_POST = json_decode($rest_json, true);
-$_POST['accountNumber'] = '03830918';
+$rest_json = file_get_contents("php://input");
+$_POST = json_decode($rest_json, true);
 
 //connect with the database
 if ($_POST) {

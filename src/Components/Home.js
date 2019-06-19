@@ -20,7 +20,7 @@ class Home extends Component {
             modal: false,
             backdrop: 'static',
             accountNumber: '',
-            accountapi: 'http://tadaoa.com/api/sign_document/autosearch_property.php'
+            accountapi: 'api/sign_document/autosearch_property.php'
         };
 
         this.toggle = this.toggle.bind(this);
@@ -40,25 +40,14 @@ class Home extends Component {
         if (this.state.accountNumber == "") return;
 
         //make a call to api
-        axios({
-            method: "post",
-            url: this.state.accountapi,
-            headers: { "content-type": "application/json" },
-            data: this.state
+        axios.post(this.state.accountapi, {
+            accountNumber: this.state.accountNumber
         })
-        .then(result => {
-            if (result.data.sent) {
-                this.setState({
-                    mailSent: result.data.sent
-                });
-                this.setState({ error: false, inProgress: false });
-            } else {
-                this.setState({ error: true, inProgress: false });
-            }
+        .then(function (response) {
+            console.log(response);
         })
-        .catch(error => this.setState({ error: error.message, inProgress: false }));
-        this.setState({
-            modal: !this.state.modal
+        .catch(function (error) {
+            console.log(error);
         });
     }
 
